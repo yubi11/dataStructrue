@@ -21,16 +21,13 @@
     <ClCompile Include="Pow.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pibonacci.c">
+    <ClCompile Include="Fibonacci.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Hanoi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BiCo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HanoiAdvanced.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

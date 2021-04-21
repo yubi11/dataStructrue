@@ -22,8 +22,7 @@
     <ClCompile Include="BiCo.c" />
     <ClCompile Include="Factorial.c" />
     <ClCompile Include="Hanoi.c" />
-    <ClCompile Include="HanoiAdvanced.c" />
-    <ClCompile Include="Pibonacci.c" />
+    <ClCompile Include="Fibonacci.c" />
     <ClCompile Include="Pow.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
