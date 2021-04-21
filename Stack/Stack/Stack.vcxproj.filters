@@ -21,9 +21,6 @@
     <ClCompile Include="StructureArrayStack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicStack.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ParenthesesCheck.c">
       <Filter>Source Files</Filter>
     </ClCompile>

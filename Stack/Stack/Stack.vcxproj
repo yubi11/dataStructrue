@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DynamicStack.c" />
     <ClCompile Include="GlobalStack.c" />
     <ClCompile Include="InfixToPostfix.c" />
     <ClCompile Include="MazePathfinding.c" />
