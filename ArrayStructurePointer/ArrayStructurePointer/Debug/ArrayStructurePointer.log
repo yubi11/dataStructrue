@@ -1,0 +1,3 @@
+﻿  DynamicMemoryAllocation.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\ArrayStructurePointer\ArrayStructurePointer\DynamicMemoryAllocation.c(22,8): warning C4013: 'strcpy' undefined; assuming extern returning int
+  ArrayStructurePointer.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\ArrayStructurePointer\Debug\ArrayStructurePointer.exe
