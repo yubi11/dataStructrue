@@ -1,0 +1,4 @@
+﻿  BankService.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Queue\Queue\BankService.c(52,9): warning C4013: 'errorC' undefined; assuming extern returning int
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Queue\Queue\BankService.c(67,12): warning C4013: 'time' undefined; assuming extern returning int
+  Queue.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Queue\Debug\Queue.exe
