@@ -8,7 +8,7 @@ typedef struct DlistNode
 	elementD data;
 	struct DlistNode* next;
 	struct DlistNode* prev;
-}DlistNode;
+}DlistNodeM;
 
 
 
@@ -30,7 +30,7 @@ DLHeader* init()
 
 DLHeader* insert_first(DLHeader* header, elementD data)
 {
-	DlistNode* input = (DlistNode*)malloc(sizeof(DlistNode));
+	DlistNodeM* input = (DlistNodeM*)malloc(sizeof(DlistNodeM));
 	input->data = data;
 	if (header->head == NULL)
 	{
@@ -51,7 +51,7 @@ DLHeader* insert_first(DLHeader* header, elementD data)
 
 DLHeader* insert_last(DLHeader* header, elementD data)
 {
-	DlistNode* input = (DlistNode*)malloc(sizeof(DlistNode));
+	DlistNodeM* input = (DlistNodeM*)malloc(sizeof(DlistNodeM));
 	input->data = data;
 
 	if (header == NULL)
@@ -85,17 +85,17 @@ DLHeader* insert_middle(DLHeader* header, int pos, elementD data)
 		DLHeader* res = insert_last(header, data);
 		return res;
 	}
-	DlistNode* input = (DlistNode*)malloc(sizeof(DlistNode));
+	DlistNodeM* input = (DlistNodeM*)malloc(sizeof(DlistNodeM));
 	if (input == NULL)
 		fprintf(stderr, "메모리 할당 실패");
 	input->data = data;
 
-	DlistNode* p = header->head;
+	DlistNodeM* p = header->head;
 	for (int i = 0; i < pos - 1; i++)
 	{
 		p = p->next;
 	}
-	DlistNode* q = p->next;
+	DlistNodeM* q = p->next;
 	p->next = input;
 	q->prev = input;
 	input->prev = p;
@@ -104,10 +104,10 @@ DLHeader* insert_middle(DLHeader* header, int pos, elementD data)
 	header->size++;
 }
 
-DlistNode deleteFirst(DLHeader* header)
+DlistNodeM deleteFirst(DLHeader* header)
 {
-	DlistNode dat = { header->head->data,NULL,NULL };
-	DlistNode* p = header->head;
+	DlistNodeM dat = { header->head->data,NULL,NULL };
+	DlistNodeM* p = header->head;
 	p->prev->next = p->next;
 	p->next->prev = p->prev;
 	header->head = p->next;
@@ -116,10 +116,10 @@ DlistNode deleteFirst(DLHeader* header)
 	return dat;
 }
 
-DlistNode deleteLast(DLHeader* header)
+DlistNodeM deleteLast(DLHeader* header)
 {
-	DlistNode dat = { header->head->prev->data,NULL,NULL };
-	DlistNode* p = header->head->prev;
+	DlistNodeM dat = { header->head->prev->data,NULL,NULL };
+	DlistNodeM* p = header->head->prev;
 	p->prev->next = p->next;
 	p->next->prev = p->prev;
 	free(p);
@@ -127,7 +127,7 @@ DlistNode deleteLast(DLHeader* header)
 	return dat;
 }
 
-DlistNode deleteMiddle(DLHeader* header, int pos)
+DlistNodeM deleteMiddle(DLHeader* header, int pos)
 {
 	if (!(pos >= 0 || pos < header->size))
 		return;
@@ -136,7 +136,7 @@ DlistNode deleteMiddle(DLHeader* header, int pos)
 	else if (pos == header->size-1)
 		return deleteLast(header);
 	
-	DlistNode* p = header->head;
+	DlistNodeM* p = header->head;
 	for (int i = 0; i < pos; i++)
 	{
 		p = header->head->next;
@@ -148,7 +148,7 @@ DlistNode deleteMiddle(DLHeader* header, int pos)
 
 void print_listD(DLHeader* header)
 {
-	DlistNode* p = header->head;
+	DlistNodeM* p = header->head;
 	for (; p != header->head->prev; p = p->next)
 	{
 		printf("%d |", p->data);
@@ -159,8 +159,8 @@ void print_listD(DLHeader* header)
 
 void freeAll(DLHeader* header)
 {
-	DlistNode* p = header->head;
-	DlistNode* q;
+	DlistNodeM* p = header->head;
+	DlistNodeM* q;
 	while (p != header->head->prev)
 	{
 		q = p;
@@ -170,7 +170,7 @@ void freeAll(DLHeader* header)
 	free(header);
 }
 
-
+/*
 int main()
 {
 	DLHeader* header = init();
@@ -194,3 +194,4 @@ int main()
 	freeAll(header);
 	return 0;
 }
+*/

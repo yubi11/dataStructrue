@@ -1,5 +1,4 @@
-﻿  DoubleLinkedList.c
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\List\DoubleLinkedList.c(133,3): warning C4033: 'deleteMiddle' must return a value
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\List\DoubleLinkedList.c(105): warning C4715: 'insert_middle': not all control paths return a value
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\List\DoubleLinkedList.c(147): warning C4715: 'deleteMiddle': not all control paths return a value
+﻿  LinkedListQueue.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\List\LinkedListQueue.c(57,7): warning C4013: 'exit' undefined; assuming extern returning int
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\List\LinkedListQueue.c(67): warning C4715: 'dequeueQ': not all control paths return a value
   List.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\List\Debug\List.exe
