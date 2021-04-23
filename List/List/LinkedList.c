@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -103,7 +103,7 @@ ListNodeL* reverse(ListNodeL* head)
 	return q;											// q로 시작하는 head노드 반환
 }
 
-
+/*
 int main()
 {
 	ListNodeL* head = NULL;

@@ -1,4 +1,1 @@
-﻿  201600974무역학과김효훈.c
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\LinkedListQueueWithDoubleLinkedList\ConsoleApplication8\201600974무역학과김효훈.c(134,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\LinkedListQueueWithDoubleLinkedList\ConsoleApplication8\201600974무역학과김효훈.c(304,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-  ConsoleApplication8.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\LinkedListQueueWithDoubleLinkedList\Debug\ConsoleApplication8.exe
+﻿  ConsoleApplication8.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\LinkedListQueueWithDoubleLinkedList\Debug\ConsoleApplication8.exe

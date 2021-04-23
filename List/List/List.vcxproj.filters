@@ -21,9 +21,6 @@
     <ClCompile Include="LinkedList.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ComfyFunctions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="polynomialExpression.c">
       <Filter>Source Files</Filter>
     </ClCompile>

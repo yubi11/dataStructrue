@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -80,7 +80,7 @@ elementA deleteA(ArrayListTypeA* L, int pos)
 	return item;
 }
 
-
+/*
 int main()
 {
 	ArrayListTypeA list;

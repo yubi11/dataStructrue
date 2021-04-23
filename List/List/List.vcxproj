@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="ArrayList.c" />
     <ClCompile Include="CircularLinkedList.c" />
-    <ClCompile Include="ComfyFunctions.c" />
     <ClCompile Include="DoubleLinkedList.c" />
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListQueue.c" />
