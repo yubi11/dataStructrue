@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #define MAX_STACK_SIZE 100
-#define MAZE_SIZE 6
+#define MAZE_SIZE 8
 
 typedef struct elementM
 {
@@ -20,12 +20,14 @@ elementM here = { 1,0 }, entry = { 1,0 };
 
 char maze[MAZE_SIZE][MAZE_SIZE] =
 {
-	{'1','1','1','1','1','1'},
-	{'e','0','1','0','0','1'},
-	{'1','0','0','0','1','1'},
-	{'1','0','1','0','1','1'},
-	{'1','0','1','0','0','x'},
-	{'1','1','1','1','1','1'}
+	{'1','1','1','1','1','1','1','1'},
+	{'e','0','0','0','1','0','0','x'},
+	{'1','0','1','1','1','0','1','1'},
+	{'1','0','0','0','0','0','0','1'},
+	{'1','0','1','1','0','1','0','1'},
+	{'1','0','1','0','0','1','0','1'},
+	{'1','0','0','0','1','1','0','1'},
+	{'1','1','1','1','1','1','1','1'}
 };
 
 
@@ -93,6 +95,14 @@ void maze_print(char maze[MAZE_SIZE][MAZE_SIZE])			// 맵을 넣음
 
 }
 
+void printStack(StackTypeM* s)
+{
+	for (int i =0;i<s->top; i++)
+	{
+		printf("%d,%d   ", s->data[i].r, s->data[i].c);
+	}
+}
+
 int main()
 {
 	int r, c;
@@ -106,9 +116,9 @@ int main()
 		c = here.c;
 		maze[r][c] = '.';						// 들린 위치는 .으로 표시
 		maze_print(maze);						// 어느 한 곳을 들릴 때 마다 계속 출력
-		push_loc(&s, r - 1, c);					// 좌우 위아래 다 체크
-		push_loc(&s, r + 1, c);
-		push_loc(&s, r , c-1);
+		push_loc(&s, r-1, c);					// 좌우 위아래 다 체크
+		push_loc(&s, r+1, c);
+		push_loc(&s, r, c-1);
 		push_loc(&s, r, c+1);
 
 		if (is_emptyM(&s))						// 스택이 비면 더 이상 갈 길이 없으므로 실패
@@ -119,6 +129,7 @@ int main()
 			here = popM(&s);					// 스택이 비지않았다면 계속 pop하면서 그 좌표를 here로 표시하여 진행함
 	}
 	printf("성공");								// 끝나면 성공
+	printStack(&s);
 
 	return 0;
 }
