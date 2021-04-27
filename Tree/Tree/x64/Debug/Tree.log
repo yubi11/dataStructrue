@@ -1,0 +1,13 @@
+﻿  ThreadBinaryTree.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(19,14): warning C4133: '=': incompatible types - from 'TreeNode *' to 'TTreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(15,1): warning C4133: 'initializing': incompatible types - from 'TreeNode *' to 'TTreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(28,14): warning C4133: '=': incompatible types - from 'TreeNode *' to 'TTreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(47,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(48,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(49,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(50,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(42,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(43,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(44,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(45,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+  Tree.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\x64\Debug\Tree.exe
