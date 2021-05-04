@@ -33,6 +33,7 @@ void thread_inorder(TTreeNode* t)
 	} while (q);
 }
 
+/*
 int main()
 {
 	TTreeNode a1 = { 1,NULL,NULL,1 };
@@ -53,3 +54,4 @@ int main()
 
 	return 0;
 }
+*/

@@ -1,13 +1,13 @@
-﻿  ThreadBinaryTree.c
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(19,14): warning C4133: '=': incompatible types - from 'TreeNode *' to 'TTreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(15,1): warning C4133: 'initializing': incompatible types - from 'TreeNode *' to 'TTreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(28,14): warning C4133: '=': incompatible types - from 'TreeNode *' to 'TTreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(47,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(48,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(49,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(50,16): warning C4133: '=': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(42,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(43,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(44,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
-C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(45,1): warning C4133: 'initializing': incompatible types - from 'TTreeNode *' to 'TreeNode *'
+﻿  BInarySearchTree.c
+  LinkedTree.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\LinkedTree.c(22,24): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\LinkedTree.c(22,42): warning C4312: '형식 캐스트': 'int'에서 더 큰 'TreeNode *'(으)로의 변환입니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\LinkedTree.c(23,42): warning C4312: '형식 캐스트': 'int'에서 더 큰 'TreeNode *'(으)로의 변환입니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\LinkedTree.c(24,42): warning C4312: '형식 캐스트': 'int'에서 더 큰 'TreeNode *'(으)로의 변환입니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\LinkedTree.c(35,6): warning C4013: 'free'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  ThreadBinaryTree.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(19,14): warning C4133: '=': 'TreeNode *'과(와) 'TTreeNode *' 사이의 형식이 호환되지 않습니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(15,1): warning C4133: '초기화 중': 'TreeNode *'과(와) 'TTreeNode *' 사이의 형식이 호환되지 않습니다.
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\Tree\ThreadBinaryTree.c(28,14): warning C4133: '=': 'TreeNode *'과(와) 'TTreeNode *' 사이의 형식이 호환되지 않습니다.
+  코드를 생성하고 있습니다...
   Tree.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\Tree\x64\Debug\Tree.exe
