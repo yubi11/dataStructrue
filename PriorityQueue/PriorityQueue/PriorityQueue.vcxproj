@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PriorityQueue.c" />
+    <ClCompile Include="Huffman_CodingTree.c" />
+    <ClCompile Include="PriorityQueuewithMaxheap.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
