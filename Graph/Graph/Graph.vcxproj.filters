@@ -18,5 +18,26 @@
     <ClCompile Include="graph.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="adjacentmatrixGraph.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdjacentlistGraph.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Kruskal%27sMST.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Prim%27sMST.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstra.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Floyd.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="topologicalsort.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,7 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="adjacentmatrixGraph.c" />
+    <ClCompile Include="AdjacentlistGraph.c" />
+    <ClCompile Include="Floyd.c" />
     <ClCompile Include="graph.c" />
+    <ClCompile Include="Kruskal%27sMST.c" />
+    <ClCompile Include="Prim%27sMST.c" />
+    <ClCompile Include="Dijkstra.c" />
+    <ClCompile Include="topologicalsort.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
