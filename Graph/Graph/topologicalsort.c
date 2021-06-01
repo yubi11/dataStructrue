@@ -103,44 +103,46 @@ void insert_edge_listT(GraphType* g, int start, int end)	//start end 는 인덱스이
 //그러므로 스택이 필요하다 (순환호출로 묵시적인 스택 사용).
 
 
-int topo_sort(GraphType* g)
-{
+int topo_sort(GraphType* g)										//위상정렬은 단방향그래프에서 사용되는것으로, 순서를 위배하지 않고
+{																//정렬하는것이 목적임, 계층에 맞게 출력하면 됨
 	int i;
 	StackType s;
 	GraphNode* node;
 
-	int* in_degree = (int*)malloc(g->n * sizeof(int));
+	int* in_degree = (int*)malloc(g->n * sizeof(int));		//모든 정점의 내차수을(연결이 들어오는 수) 나타내는 포인터
 	for (i = 0; i < g->n; i++)
-		in_degree[i] = 0;
+		in_degree[i] = 0;									// 차수 초기화
 	for (i = 0; i < g->n; i++)
 	{
-		GraphNode* node = g->adj_list[i];
-		while (node != NULL)
+		GraphNode* node = g->adj_list[i];					// 그래프 i정점의 인접리스트를 while로 돌려서
+		while (node != NULL)								// 인접해있는 모든 정점들의 내차수를 올린다.
 		{
-			in_degree[node->vertex]++;
+			in_degree[node->vertex]++;						// 
 			node = node->link;
 		}
 	}
+
 	init_stack(&s);
+	
 	for (i = 0; i < g->n; i++)
 	{
-		if (in_degree[i] == 0)
+		if (in_degree[i] == 0)						//만약 내차수가 없는 정점이라면 지워도 되므로 스택에저장
 			push(&s, i);
 	}
-	while (s.size != 0)
+	while (s.size != 0)								//스택에 무언가 있다면
 	{
 		int w;
-		w = pop(&s);
+		w = pop(&s);								//스택에서 내차수가 없는 정점을 빼내고, 출력함
 		printf("정점 %d->", w);
-		node = g->adj_list[w];
+		node = g->adj_list[w];						//내차수가 없는 정점의 인접리스트에 접근하여
 		while (node != NULL)
 		{
-			int u = node->vertex;
+			int u = node->vertex;					//인접리스트 들의 차수가 줄어들게 된다. (방금 앞에있는녀석이 사라졌기 때문)
 			in_degree[u]--;
 
-			if (in_degree[u] == 0)
+			if (in_degree[u] == 0)					//내차수를 뺐는데 0이 되면 이제 그녀석도 스택에 넣어준다.
 				push(&s, u);
-			node = node->link;
+			node = node->link;						//반복
 		}
 	}
 	free(in_degree);
@@ -148,6 +150,7 @@ int topo_sort(GraphType* g)
 	return (i == g->n);
 }
 
+/*
 void main()
 {
 	GraphType* g;
@@ -174,3 +177,5 @@ void main()
 	free(g);
 	return 0;
 }
+
+*/

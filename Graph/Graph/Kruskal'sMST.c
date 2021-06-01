@@ -33,26 +33,26 @@
 
 #define INF 100
 
-int parent[MAX_VERTICES];
+int parent[MAX_VERTICES];			// parent로 사이클을 확인 할 것임
 
 struct Edge 
 {
-	int start, end, weight;
+	int start, end, weight;			// 최소비용신장트리이므로, 간선에 가중치가 있어야함
 };
 
 typedef struct GraphType 
 {
 	int n;
-	struct Edge edges[(MAX_VERTICES * (MAX_VERTICES-1))/2];
+	struct Edge edges[(MAX_VERTICES * (MAX_VERTICES-1))/2];		//간선의 개수는 최대개수로 설정 n* (n-1) /2
 }GraphType;
 
 void set_init(int n)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)		// parent를 -1로 초기화
 		parent[i] = -1;
 }
 
-int set_find(int curr)
+int set_find(int curr)			// 매개변수가 현재 어디에 속하는지 반환해주는 함수이다. 
 {
 	if (parent[curr] == -1)
 		return curr;
@@ -61,12 +61,12 @@ int set_find(int curr)
 	return curr;
 }
 
-void set_union(int a, int b)
+void set_union(int a, int b)	// 두개의 원소가 속한 집합을 합친다.
 {
-	int root1 = set_find(a);
-	int root2 = set_find(b);
+	int root1 = set_find(a);	// 노드 a가 어디에 속하는지,
+	int root2 = set_find(b);	// 노드 b가 어디에 속하는지,
 	if (root1 != root2)
-		parent[root1] = root2;
+		parent[root1] = root2;	// 만약 소속이 같지 않다면, 노드 a가 노드 b에 속하게 된다.
 }
 
 void graph_init(GraphType* g)
@@ -74,22 +74,22 @@ void graph_init(GraphType* g)
 	g->n = 0;
 	for (int i = 0; i < (MAX_VERTICES * (MAX_VERTICES - 1)) / 2; i++)
 	{
-		g->edges[i].start = 0;
-		g->edges[i].end = 0;
+		g->edges[i].start = 0;				// 가중치그래프를 초기화하는 과정이다.
+		g->edges[i].end = 0;				// start는 시작정점 end는 끝정점 이라 생각하면 되고 weight는 비용이라 보면된다.
 		g->edges[i].weight = INF;
 	}
 }
 
 void insert_edge_kruskal(GraphType* g, int start, int end, int w)
 {
-	g->edges[g->n].start = start;
+	g->edges[g->n].start = start;			// 가중치 간선을 그래프에 포함시키는 부분이다.
 	g->edges[g->n].end = end;
 	g->edges[g->n].weight = w;
 	g->n++;
 }
 
 // qsort에 사용
-int compare(const void* a, const void* b)
+int compare(const void* a, const void* b)		//퀵소트에서 사용할 compare 함수
 {
 	struct Edge* x = (struct Edge*)a;
 	struct Edge* y = (struct Edge*)b;
@@ -103,24 +103,35 @@ void kruskal(GraphType* g)		//kruskal mst 알고리즘의 시간복잡도는 O(e*log(e))가 
 	int uset, vset;
 	struct Edge e;
 
-	set_init(g->n); //정점 개수만큼 Union-find용 인덱스 초기화
+	set_init(g->n);		//간선 개수만큼 Union-find용 인덱스 초기화
+
+
 	qsort(g->edges, g->n, sizeof(struct Edge), compare); //정렬할배열, 요소개수 ,요소크기, 비교함수(비용 오름차순)
+														//그래프 내의 간선을 가중치 순으로 정렬 한 것이다.
+														// O(e*log(e))이다. 여기서 g->n은 간선의 개수를 의미하므로
+											
+
 	printf("크루스칼 최소 신장 트리 알고리즘\n");
 	int i = 0;
-	while (edge_accepted < (g->n - 1)) //신장트리의 간선개수
+
+										// 퀵정렬이 while문 보다 더 느리므로 O(e*log(e))가 됨 
+										//while문 자체는 시간복잡도 e에 달함
+
+	while (edge_accepted < (g->n - 1)) //최소비용 신장트리의 간선개수에 달하면 종료하게된다.
 	{
-		e = g->edges[i];			//간선 찾기
-		uset = set_find(e.start);	//선택된 간선의 시작노드의 루트노드 찾기
-		vset = set_find(e.end);		//선택된 간선의 끝노드의 루트노드 찾기
-		if (uset != vset)			//루트노드가 같지 않다면 (싸이클이 만들어지지 않음)
+		e = g->edges[i];			// 그래프내의 i번째 간선을 택하고,
+
+		uset = set_find(e.start);	// i번째 간선의 시작정점의 루트노드 찾기
+		vset = set_find(e.end);		// i번째 간선의 끝정점의 루트노드 찾기
+									// 즉 i번째 간선이 이어져 있는 부분이 선택된 것이다.
+
+		if (uset != vset)			// 만약, 간선의 시작정점과 끝정점의 소속이 다르다면,
 		{
-			printf("간선 (%d,%d) %d 선택\n", e.start, e.end, e.weight);
-			edge_accepted++;		//신장트리 간선개수 축적량
-			set_union(uset, vset);	//해당 루트노드들을 합쳐줌
+			printf("간선 (%d,%d) %d 선택\n", e.start, e.end, e.weight);		//간선 이 선택되었다는 문구를 출력하고
+			edge_accepted++;		// 신장트리의 간선개수를 늘린다 -> n-1까지 늘 예정임
+			set_union(uset, vset);	// 선택된 간선의 정점들을 set_union으로 합치면 uset이 vset에 소속될 것 이다.
 		}
-		i++; //모든 정점을 
-
-
+		i++; //한 루틴을 돌았으니 i를 더해준다. 
 	}
 
 

@@ -109,12 +109,12 @@ BTreeNode* delete_node(BTreeNode* root, int key)
 		if (abs(root->data - temp->data) < abs(root->data - temp2->data))
 		{															
 			root->data = temp->data;								// 값 비교 후 가장 근접한 값 선택하여 루트로 바꿔줌
-			root->left = delete_node(root->left, temp->data);		// 그 값을 삭제시키고 
+			delete_node(root->right, temp->data);					// 그 값을 삭제시키고 
 		}
 		else
 		{
 			root->data = temp2->data;
-			root->right = delete_node(root->right, temp2->data);	// 해당 값을 루트노드에 저장 후
+			delete_node(root->left, temp2->data);				// 해당 값을 루트노드에 저장 후
 		}
 																	// 루트가 카피한 노드를 삭제 시켜줌 마치 자리를 대체하는 것 처럼
 	}
@@ -135,7 +135,8 @@ inorderB(BTreeNode* root)
 
 
 int main()															//이진탐색트리에서 탐색,삽입,삭제 연산의 시간 복잡도는 트리의 높이에 비레함
-{																	
+{
+
 	BTreeNode* n1, * n2, * n3, *n4, *n5;							// 왼쪽서브트리와 오른쪽서브트리가 균형이 맞으면 이것을 balanced 트리라 한다.
 	n1 = (BTreeNode*)malloc(sizeof(BTreeNode));						// 최선의경우는 완전이진트리인 경우이다. 이 경우에는, h는 log 2 n인데, 15개의 노드가 들어있다면, 최악의 경우에도 4번의 연산
 	n2 = (BTreeNode*)malloc(sizeof(BTreeNode));						// 최악의경우는 한쪽으로 치우쳐진 경사이진트리의 경우로, h=n이 되기 때문에 순차탐색과 시간복잡도가 같다.
@@ -160,14 +161,23 @@ int main()															//이진탐색트리에서 탐색,삽입,삭제 연산의 시간 복잡도는 
 	n2->left = NULL;
 	n2->right = NULL;
 
-	BTreeNode* answer = search(n5,80);
+	BTreeNode* answer = search(n5,100);
 
-	printf("%d\n",answer->data);
+	printf("%d\n",answer?answer->data:0);
 
-	BTreeNode* answerFor = ForSearch(n5, 80);
+	BTreeNode* answerFor = ForSearch(n5, 120);
 
-	printf("%d\n", answerFor->data);
+	printf("%d\n", answerFor?answer->data:0);
 
+	free(n1);
+	free(n2);
+	free(n3);
+	free(n4);
+	free(n5);
+	
+
+
+/*
 	BTreeNode* root = NULL;
 	BTreeNode* tmp = NULL;
 
@@ -186,13 +196,10 @@ int main()															//이진탐색트리에서 탐색,삽입,삭제 연산의 시간 복잡도는 
 		printf("이진 탐색 트리에서 30을 발견함\n");
 	else
 		printf("이진 탐색 트리에서 30을 발견못함\n");
+*/
 
 
-	free(n1);
-	free(n2);
-	free(n3);
-	free(n4);
-	free(n5);
+	
 	return 0;
 }
 

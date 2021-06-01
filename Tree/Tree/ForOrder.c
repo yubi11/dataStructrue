@@ -26,6 +26,22 @@ TreeNode* popf()
 	return p;
 }
 
+void preorder_iter(TreeNode* root)
+{
+	while (1)
+	{
+		for (; root; root = root->left)
+		{
+			printf("[%d]", root->data);
+			if(root->right)
+				pushf(root->right);
+		}
+		root = popf();
+		if (!root)
+			break;
+	}
+}
+
 void inorder_iter(TreeNode* root)
 {
 	while (1)
@@ -36,6 +52,38 @@ void inorder_iter(TreeNode* root)
 		if (!root)
 			break;
 		printf("[%d]", root->data);
+		root = root->right;
+	}
+}
+
+void postorder_iter(TreeNode* root)
+{
+	TreeNode* prev = root;
+	while (1)
+	{
+		for (; root; root = root->left)
+		{
+			pushf(root);
+		}
+		root = popf();
+
+		if (!root)
+			break;
+
+		if (!root->right || prev == root->right)
+		{
+			printf("[%d]", root->data);
+			if (prev == root->right)
+			{
+				prev = root;
+				root = NULL;
+				continue;
+			}
+			prev = root;
+		}
+		else 
+			pushf(root);
+		
 		root = root->right;
 	}
 }
@@ -51,9 +99,16 @@ TreeNode* froot = &fn6;
 /*
 int main()
 {
-	printf("중위 순회=");
+	printf("\n전위 순회=");
+	preorder_iter(froot);
+
+	printf("\n중위 순회=");
 	inorder_iter(froot);
+
+	printf("\n후위 순회=");
+	postorder_iter(froot);
 	printf("\n");
 	return 0;
 }
+
 */

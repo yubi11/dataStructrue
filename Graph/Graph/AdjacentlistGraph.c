@@ -117,10 +117,12 @@ void dfs_list(GraphType* g, int v)		// 시간복잡도 O(n+e) 순환호출 때문에 n번 + �
 	GraphNode* w;
 	visited[v] = true;
 	printf("정점 %d->", v);
-	for (w = g->adj_list[v]; w; w = w->link)
-		if (!visited[w->vertex])
-			dfs_list(g, w->vertex);
-}
+	for (w = g->adj_list[v]; w; w = w->link)	// for문은 총 e(정점간선)번 돌아감 (자신과 연결된 부분만 순회하므로 나중에 총합 e(총간선)밖에 안됨) 
+		if (!visited[w->vertex])				// 즉 for문은 e(정점간선)번 수행되고, 결국엔 모든 정점을 돌게 되므로 n번 
+			dfs_list(g, w->vertex);				// 총 O(n+e(총간선))임
+}										//각각의 정점이 이미 인접리스트와 연결되어 있어서, 
+										//각각의 정점의 연결된 간선만 for문으로 e번 호출하는 것임
+										//결과적으로는 모든 정점에 가기위해 dfs n번, for문의 총합은 e번이 될 것임
 
 
 void bfs_list(GraphType* g, int v)		// 시간복잡도 O(n+e) 순환호출 때문에 n번 + 간선의 개수만큼 돌아가게 됨
@@ -129,13 +131,13 @@ void bfs_list(GraphType* g, int v)		// 시간복잡도 O(n+e) 순환호출 때문에 n번 + �
 	QueueType q;
 	init_queue(&q);
 	visited[v] = true;
-	printf("%d 방문-> ", v);
-	enqueue(&q, v);
+	printf("%d 방문-> ", v);			// 처음 정점을 출력하고.
+	enqueue(&q, v);					// 처음 정점을 인큐로 저장한다.
 	while (q.size != 0)
 	{
-		v = dequeue(&q);
-		for (w = g->adj_list[v]; w; w = w->link)
-			if (!visited[w->vertex])
+		v = dequeue(&q);			// 정점을 디큐하여 그 인접 정점을 모두 찾고 출력하고, 그 인접정점의 인접정점을 또 찾아나가는 식임
+		for (w = g->adj_list[v]; w; w = w->link)	// dfs와 마찬가지로 for문에 대해서는 간선의 개수 만큼 돌아가고, 정점방문은 n번이다.
+			if (!visited[w->vertex])				// 즉 시간복잡도는 O(n+e)
 			{
 				visited[w->vertex] = true;
 				printf("%d 방문->", w->vertex);

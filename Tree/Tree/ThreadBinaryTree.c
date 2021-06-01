@@ -33,6 +33,17 @@ void thread_inorder(TTreeNode* t)
 	} while (q);
 }
 
+/*			    a8
+			/		\
+		 a7			  a6
+		/\			  /\
+	a5	  a4		a3	a2
+	/
+  a1
+
+*/
+
+
 /*
 int main()
 {
@@ -41,6 +52,7 @@ int main()
 	TTreeNode a3 = { 3,NULL,NULL,1 };
 	TTreeNode a4 = { 4,NULL,NULL,1 };
 	TTreeNode a5 = { 5,&a1,NULL,1 };
+
 	TTreeNode a6 = { 6,&a3,&a2,0 };
 	TTreeNode a7 = { 7,&a5,&a4,0 };
 	TTreeNode a8 = { 8,&a7,&a6,0 };

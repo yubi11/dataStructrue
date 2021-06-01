@@ -76,16 +76,16 @@ void RadixSort(int list[], int n)
 
 	for (b = 0; b < BUCKETS; b++)
 		init(&queues[b]);
-
-	for (d = 0; d < DIGITS; d++)
+												// 버킷을 queueType으로 넣어줌 
+	for (d = 0; d < DIGITS; d++)				// DIGIT, 즉 숫자 자릿수만큼 반복함
 	{
 		for (i = 0; i < n; i++)
-			enqueue(&queues[(list[i] / factor) % 10], list[i]);
+			enqueue(&queues[(list[i] / factor) % 10], list[i]);	// 처음 자릿수를 구분하여 넣어주고
 		for (b = i = 0; b < BUCKETS; b++)
 		{
-			while (!is_empty(&queues[b]))
+			while (!is_empty(&queues[b]))		// 다시 꺼냄, 
 				list[i++] = Dequeue(&queues[b]);
-		}
+		}											// 이짓을 자릿수만큼 반복할 시, 모든 수가 정렬될것임
 		factor *= 10;
 	}
 }
@@ -114,7 +114,7 @@ int main()
 
 	srand(time(NULL));
 	for (i = 0; i < n; i++)
-		list[i] = rand() % 100;
+		list[i] = rand() % 10000;
 
 	printf("정렬전: ");
 	for (int k = 0; k < n; k++)			//회차마다 출력하기

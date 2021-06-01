@@ -1,2 +1,7 @@
 ﻿  Huffman_CodingTree.c
+  PriorityQueuewithMaxheap.c
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\PriorityQueue\PriorityQueue\PriorityQueuewithMaxheap.c(37,26): warning C4013: 'malloc' undefined; assuming extern returning int
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\PriorityQueue\PriorityQueue\PriorityQueuewithMaxheap.c(108,6): warning C4013: 'free' undefined; assuming extern returning int
+C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\PriorityQueue\PriorityQueue\PriorityQueuewithMaxheap.c(115,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'element'
+  Generating Code...
   PriorityQueue.vcxproj -> C:\Users\hyo29\Desktop\GitCollections\dataStructure\dataStructure\PriorityQueue\Debug\PriorityQueue.exe
